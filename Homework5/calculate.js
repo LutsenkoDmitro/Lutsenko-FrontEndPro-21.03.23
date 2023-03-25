@@ -10,5 +10,5 @@ btnResultNode.addEventListener('click', function () {
     const operation = selectOperationNode.value;
 
     const result = calculate({a, b, operation});
-outputNode.innerHTML = result;
+outputNode.innerHTML = (`${a}${operation}${b} = ${result}`)
 })
