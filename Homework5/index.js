@@ -26,7 +26,6 @@ function func() {
             }
             break;
 
-
     }
     document.getElementById("result").innerHTML = (`${num1}${op}${num2} = ${result}`);
 }
