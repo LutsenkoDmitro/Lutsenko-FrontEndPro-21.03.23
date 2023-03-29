@@ -19,7 +19,7 @@ function func() {
             result = num1 * num2;
             break;
         case '/':
-            if (num1) {
+            if (num1 && num2) {
                 result = num1 / num2;
             } else {
                 result = `Дiлити на 0 не можна`;
