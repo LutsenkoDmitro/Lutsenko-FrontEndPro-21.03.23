@@ -59,6 +59,9 @@ let filteredUsers = users.filter(user => Number(user.balance.replace(/[^0-9.-]+/
 let phoneNumbers = filteredUsers.map(user => user.phone);
 console.log(phoneNumbers); // ["+1 (840) 583-3207", "+1 (985) 593-3328", "+1 (995) 591-2478", +1 (942) 565-3988']
 
-let totalBalance = users.reduce((accumulator, user) => accumulator + Number(user.balance.replace(/[^0-9.-]+/g,"")), 0);
+let totalBalance = users.reduce((acc, curr) => {
+    let balanceNum = parseFloat(curr.balance.replace(/[$,]/g, ''));
+    return acc + balanceNum;
+}, 0);
 
 console.log(totalBalance); // 15803.569999999998
