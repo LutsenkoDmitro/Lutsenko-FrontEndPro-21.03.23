@@ -1,11 +1,9 @@
 function redirectToExternalSite() {
-    const url = prompt('Please enter the URL of the external site:');
+    const url = document.getElementById("urlInput").value;
 
-    if (!url) {
-        return;
+    if (!url.startsWith("http://") && !url.startsWith("https://")) {
+
+        url = "http://" + url;
     }
-
-    const hasProtocol = /^https?:\/\//.test(url);
-    const fullUrl = hasProtocol ? url : `http://${url}`;
-    window.location.href = fullUrl;
+    window.location.href = url;
 }
