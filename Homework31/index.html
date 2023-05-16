@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<form id="registration-form">
+    <label for="name">Ім'я:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="surname">Прізвище:</label>
+    <input type="text" id="surname" name="surname" required><br><br>
+
+    <label for="birthdate">Дата народження:</label>
+    <input type="text" id="birthdate" name="birthdate" required><br><br>
+
+    <label>Стать:</label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Чоловіча</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Жіноча</label><br><br>
+
+    <label for="city">Місто:</label>
+    <select id="city" name="city">
+        <option value="dnipro">Днiпро</option>
+        <option value="lutsk">Луцьк</option>
+        <option value="odesa">Одеса</option>
+        <option value="kharkiv">Харків</option>
+    </select><br><br>
+
+    <label for="address">Адреса:</label><br>
+    <textarea id="address" name="address" rows="4" cols="50"></textarea><br><br>
+
+    <label>Мови, якими володієте:</label><br>
+    <input type="checkbox" id="ukr" name="languages" value="ukr">
+    <label for="ukr">Українська</label>
+    <input type="checkbox" id="eng" name="languages" value="eng">
+    <label for="eng">Англійська</label>
+    <input type="checkbox" id="rus" name="languages" value="rus">
+    <label for="rus">Нiмецька</label><br><br>
+
+    <button type="submit" id="save-btn">Зберегти</button>
+</form>
+
+<div id="table-container"></div>
+
+
+
+
+
+<script src="index.js"></script>
+</body>
+</html>
