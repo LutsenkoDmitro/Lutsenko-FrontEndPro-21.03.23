@@ -6,3 +6,4 @@ const img = document.createElement("img");
 img.src = `images/${randomImage}`;
 
 document.body.appendChild(img);
+
