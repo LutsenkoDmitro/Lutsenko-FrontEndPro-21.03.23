@@ -1,4 +1,4 @@
-const options = [
+const votingData = [
     { name: "smile1", count: 0 },
     { name: "smile2", count: 0 },
     { name: "smile3", count: 0 },
@@ -7,31 +7,31 @@ const options = [
 ];
 
 
-function vote(optionIndex) {
-    options[optionIndex].count++;
-    updateResults();
+function vote(smiley) {
+    votingData[smiley]++;
+    displayResults();
 }
 
+function displayResults() {
+    const resultContainer = document.getElementById("resultContainer");
+    resultContainer.innerHTML = "";
 
-function updateResults() {
-    const container = document.getElementById("vote-results");
-    container.innerHTML = "";
+    for (const smiley in votingData) {
+        const count = votingData[smiley];
 
-    const row = document.createElement("div");
-    row.style.display = "flex";
-    for (const option of options) {
-        const icon = document.createElement("span");
-        icon.classList.add("icon", option.name);
-        icon.style.cursor = "pointer";
-        icon.addEventListener("click", () => vote(options.indexOf(option)));
-        row.appendChild(icon);
-    }
-    container.appendChild(row);
+        const smileyElement = document.createElement("span");
+        smileyElement.innerHTML = smiley;
+        smileyElement.onclick = function() {
+            vote(this.innerHTML);
+        };
 
-    for (const option of options) {
-        const count = document.createElement("div");
-        count.textContent = option.count;
-        container.appendChild(count);
+        const countElement = document.createElement("span");
+        countElement.innerHTML = count;
+
+
+        resultContainer.appendChild(smileyElement);
+        resultContainer.appendChild(countElement);
     }
 }
-updateResults();
+
+window.onload = displayResults;
